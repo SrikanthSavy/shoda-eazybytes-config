@@ -6,7 +6,9 @@ eureka:
     hostname: localhost
   client:
     fetchRegistry: false
+    ## Dont want Eureka server to fetch registry details of other MS
     registerWithEureka: false
+    ## Dont register with urself. Dont expose your self to other MS
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     
